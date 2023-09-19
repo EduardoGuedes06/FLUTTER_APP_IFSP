@@ -44,10 +44,11 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Center(
                   child: Align(
-                    alignment: const Alignment(0, 0.5),
+                    alignment:
+                        const Alignment(0, 0.1), // Ajuste o valor vertical aqui
                     child: Text(
                       'Spiice',
                       style: TextStyle(
@@ -60,7 +61,7 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -86,21 +87,26 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 50),
-                    Text(
-                      'You have an account? ',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text(
-                      'Log-in',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'You have an account? ',
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          'Log-in',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -138,23 +144,154 @@ class FormPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
-                flex: 2,
-                child: Center(
-                  child: Align(
-                    alignment: const Alignment(0, 0.5),
-                    child: Text(
-                      'Spiice',
-                      style: TextStyle(
-                        fontSize: 65,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                flex: 3,
+                child: Align(
+                  alignment: Alignment.center, // Centraliza o container
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                      sigmaX: 0.0,
+                      sigmaY: 0.0,
+                    ),
+                    child: Container(
+                      width: 450,
+                      height: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10.0,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(10.0),
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 0.2,
+                        ),
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: 50.0),
+                              child: Text(
+                                'Sign-up',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 15.0),
+                            Container(
+                              width: 380,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 0.0,
+                                  horizontal:
+                                      10.0), // Espaçamento interno para o rótulo
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(250, 238, 252,
+                                    1), // Cor de fundo rgb(250, 238, 252)
+                                borderRadius: BorderRadius.circular(
+                                    4.0), // Bordas arredondadas
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'First Name',
+                                  border: InputBorder
+                                      .none, // Remove a borda inferior
+                                  labelStyle: TextStyle(
+                                    fontSize: 20, // Tamanho da fonte do rótulo
+                                    // Cor do rótulo
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 15.0),
+                            Container(
+                              width: 380,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 0.0,
+                                  horizontal:
+                                      10.0), // Espaçamento interno para o rótulo
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(250, 238, 252,
+                                    1), // Cor de fundo rgb(250, 238, 252)
+                                borderRadius: BorderRadius.circular(
+                                    4.0), // Bordas arredondadas
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'Last Name',
+                                  border: InputBorder
+                                      .none, // Remove a borda inferior
+                                  labelStyle: TextStyle(
+                                    fontSize: 20, // Tamanho da fonte do rótulo
+                                    // Cor do rótulo
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 15.0),
+                            Container(
+                              width: 380,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 0.0,
+                                  horizontal:
+                                      10.0), // Espaçamento interno para o rótulo
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(250, 238, 252,
+                                    1), // Cor de fundo rgb(250, 238, 252)
+                                borderRadius: BorderRadius.circular(
+                                    4.0), // Bordas arredondadas
+                              ),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'Email',
+                                  border: InputBorder
+                                      .none, // Remove a borda inferior
+                                  labelStyle: TextStyle(
+                                    fontSize: 20, // Cor do rótulo
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 15.0),
+                            Container(
+                              width: 380,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 0.0,
+                                  horizontal:
+                                      10.0), // Espaçamento interno para o rótulo
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(250, 238, 252,
+                                    1), // Cor de fundo rgb(250, 238, 252)
+                                borderRadius: BorderRadius.circular(
+                                    4.0), // Bordas arredondadas
+                              ),
+                              child: TextField(
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  labelText: 'Password',
+                                  border: InputBorder
+                                      .none, // Remove a borda inferior
+                                  labelStyle: TextStyle(
+                                    fontSize: 20, // Cor do rótulo
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -180,21 +317,26 @@ class FormPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 50),
-                    Text(
-                      'You have an account? ',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text(
-                      'Log-in',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'You have an account? ',
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          'Log-in',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
