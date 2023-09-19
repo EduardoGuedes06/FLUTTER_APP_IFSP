@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(224, 223, 224, 1.0),
       body: Center(
         child: Container(
-          width: 530,
+          width: 490,
           height: 690,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -47,8 +47,7 @@ class MyHomePage extends StatelessWidget {
                 flex: 3,
                 child: Center(
                   child: Align(
-                    alignment:
-                        const Alignment(0, 0.1), // Ajuste o valor vertical aqui
+                    alignment: const Alignment(0, 0.1),
                     child: Text(
                       'Spiice',
                       style: TextStyle(
@@ -67,7 +66,6 @@ class MyHomePage extends StatelessWidget {
                   children: <Widget>[
                     ElevatedButton(
                       onPressed: () {
-                        // Navegar para a outra página em branco
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => FormPage(),
                         ));
@@ -146,7 +144,7 @@ class FormPage extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: Align(
-                  alignment: Alignment.center, // Centraliza o container
+                  alignment: Alignment.center,
                   child: BackdropFilter(
                     filter: ImageFilter.blur(
                       sigmaX: 0.0,
@@ -188,23 +186,17 @@ class FormPage extends StatelessWidget {
                             Container(
                               width: 380,
                               padding: EdgeInsets.symmetric(
-                                  vertical: 0.0,
-                                  horizontal:
-                                      10.0), // Espaçamento interno para o rótulo
+                                  vertical: 0.0, horizontal: 10.0),
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(250, 238, 252,
-                                    1), // Cor de fundo rgb(250, 238, 252)
-                                borderRadius: BorderRadius.circular(
-                                    4.0), // Bordas arredondadas
+                                color: Color.fromRGBO(250, 238, 252, 1),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                               child: TextField(
                                 decoration: InputDecoration(
                                   labelText: 'First Name',
-                                  border: InputBorder
-                                      .none, // Remove a borda inferior
+                                  border: InputBorder.none,
                                   labelStyle: TextStyle(
-                                    fontSize: 20, // Tamanho da fonte do rótulo
-                                    // Cor do rótulo
+                                    fontSize: 20,
                                   ),
                                 ),
                               ),
@@ -213,23 +205,17 @@ class FormPage extends StatelessWidget {
                             Container(
                               width: 380,
                               padding: EdgeInsets.symmetric(
-                                  vertical: 0.0,
-                                  horizontal:
-                                      10.0), // Espaçamento interno para o rótulo
+                                  vertical: 0.0, horizontal: 10.0),
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(250, 238, 252,
-                                    1), // Cor de fundo rgb(250, 238, 252)
-                                borderRadius: BorderRadius.circular(
-                                    4.0), // Bordas arredondadas
+                                color: Color.fromRGBO(250, 238, 252, 1),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                               child: TextField(
                                 decoration: InputDecoration(
                                   labelText: 'Last Name',
-                                  border: InputBorder
-                                      .none, // Remove a borda inferior
+                                  border: InputBorder.none,
                                   labelStyle: TextStyle(
-                                    fontSize: 20, // Tamanho da fonte do rótulo
-                                    // Cor do rótulo
+                                    fontSize: 20,
                                   ),
                                 ),
                               ),
@@ -238,22 +224,17 @@ class FormPage extends StatelessWidget {
                             Container(
                               width: 380,
                               padding: EdgeInsets.symmetric(
-                                  vertical: 0.0,
-                                  horizontal:
-                                      10.0), // Espaçamento interno para o rótulo
+                                  vertical: 0.0, horizontal: 10.0),
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(250, 238, 252,
-                                    1), // Cor de fundo rgb(250, 238, 252)
-                                borderRadius: BorderRadius.circular(
-                                    4.0), // Bordas arredondadas
+                                color: Color.fromRGBO(250, 238, 252, 1),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                               child: TextField(
                                 decoration: InputDecoration(
                                   labelText: 'Email',
-                                  border: InputBorder
-                                      .none, // Remove a borda inferior
+                                  border: InputBorder.none,
                                   labelStyle: TextStyle(
-                                    fontSize: 20, // Cor do rótulo
+                                    fontSize: 20,
                                   ),
                                 ),
                               ),
@@ -262,23 +243,18 @@ class FormPage extends StatelessWidget {
                             Container(
                               width: 380,
                               padding: EdgeInsets.symmetric(
-                                  vertical: 0.0,
-                                  horizontal:
-                                      10.0), // Espaçamento interno para o rótulo
+                                  vertical: 0.0, horizontal: 10.0),
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(250, 238, 252,
-                                    1), // Cor de fundo rgb(250, 238, 252)
-                                borderRadius: BorderRadius.circular(
-                                    4.0), // Bordas arredondadas
+                                color: Color.fromRGBO(250, 238, 252, 1),
+                                borderRadius: BorderRadius.circular(4.0),
                               ),
                               child: TextField(
                                 obscureText: true,
                                 decoration: InputDecoration(
                                   labelText: 'Password',
-                                  border: InputBorder
-                                      .none, // Remove a borda inferior
+                                  border: InputBorder.none,
                                   labelStyle: TextStyle(
-                                    fontSize: 20, // Cor do rótulo
+                                    fontSize: 20,
                                   ),
                                 ),
                               ),
@@ -297,9 +273,8 @@ class FormPage extends StatelessWidget {
                   children: <Widget>[
                     ElevatedButton(
                       onPressed: () {
-                        // Navegar para a outra página em branco
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => FormPage(),
+                          builder: (context) => UserProfile(),
                         ));
                       },
                       style: ElevatedButton.styleFrom(
@@ -342,6 +317,33 @@ class FormPage extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class UserProfile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(224, 223, 224, 1.0),
+      body: Center(
+        child: Container(
+          width: 530,
+          height: 690,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: const Color.fromRGBO(224, 223, 224, 1.0),
+              width: 2.0,
+            ),
+            borderRadius: BorderRadius.zero,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[],
           ),
         ),
       ),
