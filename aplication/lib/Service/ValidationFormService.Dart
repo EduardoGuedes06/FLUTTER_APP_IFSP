@@ -5,7 +5,7 @@ class FormValidationService {
     } else if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
       return 'Only letters allowed';
     }
-    return null;
+    return '';
   }
 
   String validateLastName(String value) {
@@ -14,7 +14,7 @@ class FormValidationService {
     } else if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
       return 'Only letters allowed';
     }
-    return null;
+    return '';
   }
 
   String validateEmail(String value) {
@@ -23,7 +23,7 @@ class FormValidationService {
     } else if (value.length > 50) {
       return 'Maximum 50 characters';
     }
-    return null;
+    return '';
   }
 
   String validatePassword(String value) {
@@ -32,6 +32,6 @@ class FormValidationService {
     } else if (value.length < 12 || !RegExp(r'^(?=.*[0-9])(?=.*[!@#$%^&*()_+{}|:;<>,.?~]).{12,}$').hasMatch(value)) {
       return 'Must contain at least 12 characters, with a number and a special character';
     }
-    return null;
+    return '';
   }
 }
