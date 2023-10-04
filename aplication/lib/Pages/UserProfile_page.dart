@@ -13,23 +13,25 @@ class UserProfile_page extends StatelessWidget {
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
-              color: const Color.fromRGBO(224, 223, 224, 1.0),
-              width: 2.0,
-            ),
             borderRadius: BorderRadius.zero,
-            image: DecorationImage(
-              image: AssetImage('assets/wwwroot/fundo.jpg'),
-              fit: BoxFit.cover,
-            ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
             children: <Widget>[
-              Expanded(
-                flex: 3,
-                child: Container(),
+              Positioned.fill(
+                child: Container(
+                  color: Color.fromARGB(249, 214, 176, 245).withOpacity(0.1),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Expanded(
+                          flex: 3,
+                          child: Container(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -39,15 +41,10 @@ class UserProfile_page extends StatelessWidget {
         height: 80.0, // Defina a altura desejada aqui
         decoration: BoxDecoration(
           color: Color.fromRGBO(222, 218, 245, 1.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0, -1),
-              blurRadius: 8.0,
-            ),
-          ],
+          boxShadow: [], // Remova a sombra definindo uma lista vazia
         ),
         child: BottomNavigationBar(
+          elevation: 0.0, // Defina a elevação como 0.0 para remover a sombra
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(

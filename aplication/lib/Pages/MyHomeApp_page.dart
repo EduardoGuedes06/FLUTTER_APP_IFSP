@@ -34,6 +34,10 @@ class MyHomeApp_page extends StatelessWidget {
             image: DecorationImage(
               image: AssetImage('assets/wwwroot/fundo.jpg'),
               fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Color.fromARGB(249, 214, 176, 245).withOpacity(0.1),
+                BlendMode.darken,
+              ),
             ),
           ),
           child: Column(
