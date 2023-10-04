@@ -110,32 +110,99 @@ class UserProfile_page extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 30.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '64 reviews',
+                              style: TextStyle(
+                                fontSize: 25.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'Average rating      ',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: List.generate(5, (index) {
+                            return Icon(
+                              Icons.star,
+                              color: Color.fromRGBO(150, 119, 255, 1.0),
+                              size: 24.0,
+                            );
+                          }),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Last review',
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(171, 165, 175, 1.0),
+                      ),
+                    ),
+                    SizedBox(height: 5.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '64 reviews',
+                          'Awesome job!',
                           style: TextStyle(
-                            fontSize: 25.0,
+                            fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          'Average rating        ',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: EdgeInsets.only(right: 15.0),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromRGBO(250, 238, 252, 1),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(3.0),
+                              ),
+                              minimumSize: Size(120, 45),
+                            ),
+                            child: Text(
+                              'View all',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.0),
+                    SizedBox(height: 1.0),
                     Text(
-                      'Last review',
+                      '-Kyle Wilson',
                       style: TextStyle(
-                        fontSize: 10.0,
+                        fontSize: 13.0,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(171, 165, 175, 1.0),
+                      ),
+                    ),
+                    SizedBox(height: 25.0),
+                    Text(
+                      'Portifolio',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
