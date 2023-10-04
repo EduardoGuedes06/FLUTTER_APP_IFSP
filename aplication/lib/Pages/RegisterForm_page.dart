@@ -1,15 +1,23 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:aplication/Pages/UserProfile_page.dart';
+import 'package:aplication/Models/User.dart';
+import 'package:provider/provider.dart';
+import '../Service/UserCache.dart';
 
 class RegisterForm_page extends StatefulWidget {
   @override
-  _RegisterFormPageState createState() => _RegisterFormPageState();
+  _RegisterForm_page createState() => _RegisterForm_page();
 }
 
-class _RegisterFormPageState extends State<RegisterForm_page> {
+class _RegisterForm_page extends State<RegisterForm_page> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final FormValidationService _formValidationService = FormValidationService();
+
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   String? firstName;
   String? lastName;
@@ -19,13 +27,29 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
   AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
   @override
+  void initState() {
+    super.initState();
+    final userCache = context.read<UserCache>();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final userCache = context.watch<UserCache>();
     return Scaffold(
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-              // ...resto do seu código de decoração
-              ),
+            color: Colors.white,
+            border: Border.all(
+              color: const Color.fromRGBO(224, 223, 224, 1.0),
+              width: 2.0,
+            ),
+            borderRadius: BorderRadius.zero,
+            image: DecorationImage(
+              image: AssetImage('assets/wwwroot/fundo.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Form(
             key: _formKey,
             autovalidateMode: _autovalidateMode, // Configura o autovalidateMode
@@ -86,6 +110,7 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                   child: TextFormField(
+                                    controller: firstNameController,
                                     decoration: InputDecoration(
                                       labelText: 'First Name',
                                       border: InputBorder.none,
@@ -116,6 +141,7 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                   child: TextFormField(
+                                    controller: lastNameController,
                                     decoration: InputDecoration(
                                       labelText: 'Last Name',
                                       border: InputBorder.none,
@@ -146,6 +172,7 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                   child: TextFormField(
+                                    controller: emailController,
                                     decoration: InputDecoration(
                                       labelText: 'Email',
                                       border: InputBorder.none,
@@ -176,6 +203,7 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                   child: TextFormField(
+                                    controller: passwordController,
                                     obscureText: true,
                                     decoration: InputDecoration(
                                       labelText: 'Password',
@@ -210,13 +238,20 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
                     children: <Widget>[
                       ElevatedButton(
                         onPressed: () {
-                          // Altera o autovalidateMode para validar automaticamente
                           setState(() {
                             _autovalidateMode = AutovalidateMode.always;
                           });
 
                           if (_formKey.currentState!.validate()) {
-                            // Se o formulário for válido, navegue para a próxima página
+                            final userCache =
+                                Provider.of<UserCache>(context, listen: false);
+
+                            userCache.updateUser(
+                                firstNameController.text,
+                                lastNameController.text,
+                                emailController.text,
+                                passwordController.text);
+
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => UserProfile_page(),
@@ -269,5 +304,45 @@ class _RegisterFormPageState extends State<RegisterForm_page> {
         ),
       ),
     );
+  }
+}
+
+class FormValidationService {
+  String? validateFirstName(String value) {
+    if (value.isEmpty) {
+      return 'Please enter your first name';
+    } else if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
+      return 'Only letters allowed';
+    }
+    return null;
+  }
+
+  String? validateLastName(String value) {
+    if (value.isEmpty) {
+      return 'Please enter your last name';
+    } else if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
+      return 'Only letters allowed';
+    }
+    return null;
+  }
+
+  String? validateEmail(String value) {
+    if (value.isEmpty) {
+      return 'Please enter an email address';
+    } else if (value.length > 50) {
+      return 'Maximum 50 characters';
+    }
+    return null;
+  }
+
+  String? validatePassword(String value) {
+    if (value.isEmpty) {
+      return 'Please enter a password';
+    } else if (value.length < 12 ||
+        !RegExp(r'^(?=.*[0-9])(?=.*[!@#$%^&*()_+{}|:;<>,.?~]).{12,}$')
+            .hasMatch(value)) {
+      return 'Must contain at least 12 characters, with a number and a special character';
+    }
+    return null;
   }
 }

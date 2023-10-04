@@ -1,6 +1,5 @@
 import 'package:aplication/Pages/RegisterForm_page.dart';
 import 'package:flutter/material.dart';
-import 'MyHomeApp_page.dart'; // Importe a classe HomePage
 
 void main() {
   runApp(const MyApp());
