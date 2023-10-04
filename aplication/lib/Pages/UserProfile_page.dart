@@ -198,12 +198,43 @@ class UserProfile_page extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 25.0),
-                    Text(
-                      'Portifolio',
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    // Aqui adicionamos a nova coluna para o portfólio
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Portfólio',
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/wwwroot/fundo.jpg',
+                              width: 150.0,
+                              height: 150.0,
+                              fit: BoxFit.cover,
+                            ),
+                            Image.asset(
+                              'assets/wwwroot/fundo.jpg',
+                              width: 150.0,
+                              height: 150.0,
+                              fit: BoxFit.cover,
+                            ),
+                            Image.asset(
+                              'assets/wwwroot/fundo.jpg',
+                              width: 150.0,
+                              height: 150.0,
+                              fit: BoxFit.cover,
+                            )
+                          ],
+                        )
+                      ],
                     ),
                   ],
                 ),
