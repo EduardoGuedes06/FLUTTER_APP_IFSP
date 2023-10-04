@@ -10,21 +10,75 @@ class UserProfile_page extends StatelessWidget {
     final user = userCache.getUser(); // Obtenha o usuário do UserCache
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('User Profile'),
-      ),
       body: Center(
-        child: user != null
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('First Name: ${user.firstName}'),
-                  Text('Last Name: ${user.lastName}'),
-                  Text('Email: ${user.email}'),
-                  // Adicione mais campos conforme necessário
-                ],
-              )
-            : Text('User data not available.'),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: const Color.fromRGBO(224, 223, 224, 1.0),
+              width: 2.0,
+            ),
+            borderRadius: BorderRadius.zero,
+            image: DecorationImage(
+              image: AssetImage('assets/wwwroot/fundo.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                flex: 3,
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80.0, // Defina a altura desejada aqui
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(222, 218, 245, 1.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(0, -1),
+              blurRadius: 8.0,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Color.fromRGBO(222, 218, 245, 1.0),
+              ),
+              label: 'Início',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: Color.fromRGBO(222, 218, 245, 1.0),
+              ),
+              label: 'Pesquisar',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.notifications,
+                color: Color.fromRGBO(222, 218, 245, 1.0),
+              ),
+              label: 'Notificações',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: Color.fromRGBO(150, 131, 220, 1.0),
+              ),
+              label: 'Perfil',
+            ),
+          ],
+        ),
       ),
     );
   }
