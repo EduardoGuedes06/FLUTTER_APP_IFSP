@@ -1,13 +1,12 @@
 import 'package:aplication/Pages/RegisterForm_page.dart';
 import 'package:aplication/Pages/UserProfile_page.dart';
-import 'package:aplication/Pages/RecrutingMessage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aplication/Service/UserCache.dart';
 import 'package:aplication/Models/User.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Recruting_page extends StatelessWidget {
+class RecrutingMessage_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userCache = Provider.of<UserCache>(context);
@@ -81,16 +80,9 @@ class Recruting_page extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 25.0),
+                    SizedBox(height: 45.0),
                     Text(
-                      "Posted 3 days ago",
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        color: Color.fromRGBO(171, 165, 175, 1.0),
-                      ),
-                    ),
-                    Text(
-                      "Create an application",
+                      "Make a proposition",
                       style: TextStyle(
                         fontSize: 34.0,
                         height: 1.2,
@@ -98,132 +90,11 @@ class Recruting_page extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 25.0),
-                    Text(
-                      "We are a young startup trom Paris looking.\nfor a designer who can help us design a\ntech oriented application, We are open to\nproposals,\nYou can saw our project here;\nhitpi//wworzotware.com,\nWe are working with Figma and Photoshop.",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        height: 1.5,
-                        color: Color.fromRGBO(171, 165, 175, 1.0),
-                      ),
-                    ),
-                    SizedBox(height: 30.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '16 propositions',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Color.fromRGBO(171, 165, 175, 1.0),
-                          ),
-                        ),
-                        Text(
-                          '\$ 2400     ',
-                          style: TextStyle(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromRGBO(150, 131, 220, 1.0),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 30.0),
-                    Row(
-                      children: [
-                        Container(
-                          width: 60.0,
-                          height: 30.0,
-                          margin: EdgeInsets.only(right: 10.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Color.fromRGBO(171, 165, 175, 1.0),
-                              width: 2.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'UX/UI',
-                              style: TextStyle(
-                                fontSize: 15.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 78.0,
-                          height: 30.0,
-                          margin: EdgeInsets.only(
-                              right: 10.0), // Add space between containers
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Color.fromRGBO(171, 165, 175, 1.0),
-                              width: 2.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'DESIGN',
-                              style: TextStyle(
-                                fontSize: 15.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 75.0,
-                          height: 30.0,
-                          margin: EdgeInsets.only(
-                              right: 10.0), // Add space between containers
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Color.fromRGBO(171, 165, 175, 1.0),
-                              width: 2.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'FIGMA',
-                              style: TextStyle(
-                                fontSize: 15.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 110.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Color.fromRGBO(171, 165, 175, 1.0),
-                              width: 2.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'PHOTOSHOP',
-                              style: TextStyle(
-                                fontSize: 15.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     SizedBox(height: 100.0),
                     Align(
                       alignment: Alignment.center,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => RecrutingMessage_page(),
-                            ),
-                          );
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           primary: const Color.fromRGBO(150, 119, 255, 1.0),
                           shape: RoundedRectangleBorder(

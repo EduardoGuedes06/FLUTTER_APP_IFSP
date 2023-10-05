@@ -1,4 +1,5 @@
 import 'package:aplication/Pages/RegisterForm_page.dart';
+import 'package:aplication/Pages/RecrutingMessage_page.dart';
 import 'package:aplication/Pages/MyHomeApp_page.dart';
 import 'package:aplication/Pages/UserProfile_page.dart';
 import 'package:aplication/Pages/Recruting_page.dart';
@@ -15,6 +16,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => UserProfile_page());
       case '/recruting':
         return MaterialPageRoute(builder: (_) => Recruting_page());
+      case '/recruting/message':
+        return MaterialPageRoute(builder: (_) => RecrutingMessage_page());
       default:
         return MaterialPageRoute(builder: (_) => const MyHomeApp_page());
     }
