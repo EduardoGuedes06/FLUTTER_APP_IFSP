@@ -1,3 +1,4 @@
+import 'package:aplication/Pages/Recruting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aplication/Service/UserCache.dart';
@@ -8,13 +9,13 @@ class UserProfile_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userCache = Provider.of<UserCache>(context);
-    final user = userCache.getUser(); // Obtenha o usuário do UserCache
+    final user = userCache.getUser();
 
     return Scaffold(
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.zero,
+            color: Color.fromARGB(255, 250, 247, 255),
           ),
           child: Stack(
             children: <Widget>[
@@ -34,7 +35,6 @@ class UserProfile_page extends StatelessWidget {
                   ),
                 ),
               ),
-              // Conteúdo do perfil
               Positioned.fill(
                 top: 20.0,
                 left: 20.0,
@@ -54,7 +54,7 @@ class UserProfile_page extends StatelessWidget {
                       children: [
                         ClipOval(
                           child: Image.asset(
-                            'assets/wwwroot/fundo.jpg', // Caminho da imagem local
+                            'assets/wwwroot/fundo.jpg',
                             width:
                                 80.0, // Ajuste o tamanho da imagem conforme necessário
                             height: 80.0,
@@ -102,7 +102,7 @@ class UserProfile_page extends StatelessWidget {
                     ),
                     SizedBox(height: 25.0),
                     Text(
-                      "My name is Dustin, I'm a young designer \nfrom Dublin. I've been practicing for 4 years now\n and have worked with both small and large agencies.\nBlablabla",
+                      "My name is Dustin, I'm a young designer \nfrom Dublin. I've been practicing for 4 years now\nand have worked with small and large agencies.\nBlablabla",
                       style: TextStyle(
                         fontSize: 18.0,
                         height: 1.8,
@@ -251,7 +251,7 @@ class UserProfile_page extends StatelessWidget {
             BoxShadow(
               color: Colors.black12,
               offset: Offset(0, -1),
-              blurRadius: 8.0,
+              blurRadius: 30.0,
             ),
           ],
         ),
@@ -290,6 +290,15 @@ class UserProfile_page extends StatelessWidget {
               label: '',
             ),
           ],
+          onTap: (int index) {
+            if (index == 1) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Recruting_page(),
+                ),
+              );
+            }
+          },
         ),
       ),
     );
