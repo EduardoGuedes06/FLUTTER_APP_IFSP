@@ -23,5 +23,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/wwwroot/fundo.jpg
-    - assets/wwwroot/Usuario.png
     - assets/wwwroot/usuario.jpg
+    - assets/wwwroot/dog.jpg
+    - assets/wwwroot/mar.jpg
+    - assets/wwwroot/bi.jpg

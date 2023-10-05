@@ -42,7 +42,7 @@ class _RecrutingMessage_page extends State<RecrutingMessage_page> {
             color: Color.fromARGB(255, 250, 247, 255),
           ),
           child: Align(
-            alignment: Alignment.centerLeft, // Alinhe à esquerda
+            alignment: Alignment.centerLeft,
             child: Stack(
               children: <Widget>[
                 Positioned.fill(
@@ -84,7 +84,7 @@ class _RecrutingMessage_page extends State<RecrutingMessage_page> {
                         children: [
                           ClipOval(
                             child: Image.asset(
-                              'assets/wwwroot/fundo.jpg',
+                              'assets/wwwroot/mar.jpg',
                               width: 80.0,
                               height: 80.0,
                               fit: BoxFit.cover,
@@ -162,10 +162,9 @@ class _RecrutingMessage_page extends State<RecrutingMessage_page> {
                       ),
                       SizedBox(height: 120.0),
                       Align(
-                        alignment: Alignment.centerLeft, // Alinhe à esquerda
+                        alignment: Alignment.centerLeft,
                         child: Container(
-                          margin: EdgeInsets.only(
-                              left: 81.0), // Mova o botão para a esquerda
+                          margin: EdgeInsets.only(left: 81.0),
                           child: ElevatedButton(
                             onPressed: () {
                               setState(() {

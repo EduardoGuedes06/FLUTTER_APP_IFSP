@@ -17,7 +17,7 @@ class ListMessage_page extends StatelessWidget {
           color: Color.fromARGB(255, 250, 247, 255),
         ),
         child: Align(
-          alignment: Alignment.centerLeft, // Alinhe à esquerda
+          alignment: Alignment.centerLeft,
           child: Stack(
             children: <Widget>[
               Positioned.fill(
@@ -72,8 +72,7 @@ class ListMessage_page extends StatelessWidget {
                                 ),
                               ),
                               Icon(
-                                Icons
-                                    .book, // Você pode alterar o ícone conforme necessário
+                                Icons.book,
                                 color: Color.fromRGBO(171, 165, 175, 1.0),
                                 size: 30.0,
                               ),

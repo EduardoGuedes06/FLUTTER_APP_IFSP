@@ -55,7 +55,7 @@ class _RegisterForm_page extends State<RegisterForm_page> {
           ),
           child: Form(
             key: _formKey,
-            autovalidateMode: _autovalidateMode, // Configura o autovalidateMode
+            autovalidateMode: _autovalidateMode,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

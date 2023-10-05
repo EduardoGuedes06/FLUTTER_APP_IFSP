@@ -63,7 +63,7 @@ class Recruting_page extends StatelessWidget {
                       children: [
                         ClipOval(
                           child: Image.asset(
-                            'assets/wwwroot/fundo.jpg',
+                            'assets/wwwroot/mar.jpg',
                             width: 80.0,
                             height: 80.0,
                             fit: BoxFit.cover,
@@ -156,8 +156,7 @@ class Recruting_page extends StatelessWidget {
                         Container(
                           width: 78.0,
                           height: 30.0,
-                          margin: EdgeInsets.only(
-                              right: 10.0), // Add space between containers
+                          margin: EdgeInsets.only(right: 10.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
                             border: Border.all(
@@ -177,8 +176,7 @@ class Recruting_page extends StatelessWidget {
                         Container(
                           width: 75.0,
                           height: 30.0,
-                          margin: EdgeInsets.only(
-                              right: 10.0), // Add space between containers
+                          margin: EdgeInsets.only(right: 10.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
                             border: Border.all(
@@ -218,10 +216,9 @@ class Recruting_page extends StatelessWidget {
                     ),
                     SizedBox(height: 100.0),
                     Align(
-                        alignment: Alignment.centerLeft, // Alinhe à esquerda
+                        alignment: Alignment.centerLeft,
                         child: Container(
-                          margin: EdgeInsets.only(
-                              left: 81.0), // Mova o botão para a esquerda
+                          margin: EdgeInsets.only(left: 81.0),
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(
