@@ -1,9 +1,12 @@
+import 'package:aplication/Models/UserMessage.dart';
+import 'package:aplication/Pages/ListMessage_page.dart';
 import 'package:aplication/Pages/RegisterForm_page.dart';
 import 'package:aplication/Pages/UserProfile_page.dart';
 import 'package:aplication/Pages/RecrutingMessage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aplication/Service/UserCache.dart';
+import 'package:aplication/Service/UserMessageCache.dart';
 import 'package:aplication/Models/User.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,7 +14,7 @@ class Recruting_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userCache = Provider.of<UserCache>(context);
-    final user = userCache.getUser();
+    final UserMessage = userCache.getUser();
 
     return Scaffold(
       body: Center(
@@ -215,31 +218,34 @@ class Recruting_page extends StatelessWidget {
                     ),
                     SizedBox(height: 100.0),
                     Align(
-                      alignment: Alignment.center,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => RecrutingMessage_page(),
+                        alignment: Alignment.centerLeft, // Alinhe à esquerda
+                        child: Container(
+                          margin: EdgeInsets.only(
+                              left: 81.0), // Mova o botão para a esquerda
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => RecrutingMessage_page(),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color.fromRGBO(150, 119, 255, 1.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              minimumSize: const Size(300, 60),
                             ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: const Color.fromRGBO(150, 119, 255, 1.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
+                            child: const Text(
+                              'Make a proposition',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                              ),
+                            ),
                           ),
-                          minimumSize: const Size(300, 60),
-                        ),
-                        child: const Text(
-                          'Make a proposition',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                          ),
-                        ),
-                      ),
-                    )
+                        ))
                   ],
                 ),
               ),
@@ -299,6 +305,13 @@ class Recruting_page extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => UserProfile_page(),
+                ),
+              );
+            }
+            if (index == 0) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ListMessage_page(),
                 ),
               );
             }

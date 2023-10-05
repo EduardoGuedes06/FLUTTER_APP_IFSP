@@ -1,3 +1,4 @@
+import 'package:aplication/Pages/ListMessage_page.dart';
 import 'package:aplication/Pages/Recruting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -295,6 +296,13 @@ class UserProfile_page extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => Recruting_page(),
+                ),
+              );
+            }
+            if (index == 0) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ListMessage_page(),
                 ),
               );
             }

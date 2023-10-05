@@ -12,7 +12,6 @@ class RegisterForm_page extends StatefulWidget {
 
 class _RegisterForm_page extends State<RegisterForm_page> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final FormValidationService _formValidationService = FormValidationService();
 
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
